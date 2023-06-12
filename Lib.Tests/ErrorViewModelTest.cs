@@ -22,7 +22,7 @@ namespace Lib.Tests
         [Test]
         public void ShowRequestId_ReturnsFalse_WhenRequestIdIsNullOrEmpty()
         {
-            var errorViewModel1 = new ErrorViewModel(); // RequestId is null by default
+            var errorViewModel1 = new ErrorViewModel();
             var errorViewModel2 = new ErrorViewModel
             {
                 RequestId = string.Empty
