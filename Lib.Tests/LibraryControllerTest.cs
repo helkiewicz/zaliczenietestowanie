@@ -17,18 +17,15 @@ namespace Lib.Tests
         [SetUp]
         public void Setup()
         {
-            // Set up the mock database context
             var options = new DbContextOptionsBuilder<LibraryContext>()
                 .UseInMemoryDatabase(databaseName: "TestLibrary")
                 .Options;
             _context = new LibraryContext(options);
 
-            // Add sample data to the in-memory database
             _context.Books.Add(new Library { idBook = 1, Tittle = "Book 1", Author = "Author 1", Section = "Section 1", Status = Status.Available });
             _context.Books.Add(new Library { idBook = 2, Tittle = "Book 2", Author = "Author 2", Section = "Section 2", Status = Status.Available });
             _context.SaveChanges();
 
-            // Create the controller instance
             _controller = new LibrariesController(_context);
         }
 
